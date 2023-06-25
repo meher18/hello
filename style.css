@@ -1,6 +1,6 @@
 @import "mobile_style.css";
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
 body {
   width: 100%;
   margin: 0;
@@ -14,22 +14,24 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #020202;
+  cursor: pointer;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #ff9c7d;
+  cursor: pointer;
+  background: #e2dfde;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgb(221, 221, 221);
 }
 
 .hamburger-icon {
@@ -39,7 +41,6 @@ body {
 }
 .navbar {
   width: 100%;
-  position: relative;
   height: 10vh;
   background-color: #413f3f;
   display: flex;
@@ -95,6 +96,7 @@ body {
   color: white;
 }
 .sidenav-links {
+  z-index: 2;
   height: 80%;
   width: 100%;
   list-style: none;
@@ -106,8 +108,10 @@ body {
 }
 .sidenav-links li {
   margin: auto;
+  z-index: 2;
 }
 .sidenav-links li a {
+  z-index: 2;
   text-decoration: none;
   font-size: 5.5vw;
   color: white;
@@ -123,11 +127,11 @@ body {
 }
 .about-container {
   width: 100%;
-  height: fit-content;
+  height: 125vh;
   background-image: linear-gradient(150deg, #434343 50%, rgb(0, 0, 0));
   position: relative;
   display: grid;
-  grid-template-columns: 60% 1fr;
+  grid-template-columns: 55% 1fr;
 }
 .about-details {
   width: 100%;
@@ -136,11 +140,11 @@ body {
   flex-direction: column;
   justify-content: space-around;
   margin-left: 20%;
-  margin-top: 10vh;
+  margin-top: 20vh;
 }
 .about-container .greeting {
   width: 100%;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 3rem;
   font-weight: 100;
 }
@@ -150,31 +154,32 @@ body {
   font-size: 3.5rem;
   font-weight: 100;
 }
-.about-container .details {
-  width: 60%;
+.about-container .roles {
+  width: 70%;
   color: white;
+  font-size: 1.7rem;
+}.about-container .details-1 {
+  width: 60%;
+  color: rgb(212, 203, 203);
   font-size: 1.8rem;
 }
 .pic {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
+  height: 100%;
+  position: relative;
 }
 .pic img {
   z-index: 1;
   width: 100%;
-  margin: auto;
   object-fit: contain;
-  height: max-content;
+  height:100%;
 }
-.about-container svg {
+.about-container > svg {
   grid-column: 1/3;
   width: 100%;
   position: absolute;
-  bottom: -30px;
-  z-index: 2;
+  bottom: -5%;
+  z-index: 0;
 }
 
 .about-me-container {
@@ -198,21 +203,21 @@ body {
   margin-top: 20vw;
   width: 100%;
   height: 100vh;
-  background-color: #413f3f;
+  background-color: #000000;
   border-radius: 20px;
-  box-shadow: 0px 0px 40px 10px rgb(170, 170, 170), 10px -10px 40px 5px white;
+  box-shadow: 0px 0px 40px 10px rgb(170, 170, 170), 0px 0px 30px 5px rgb(240, 240, 240);
 }
 .about-me-image {
   border-radius: 20px;
   width: fit-content;
   height: fit-content;
-  padding: 40px;
+  padding: 24px;
   overflow: hidden;
   position: relative;
   background-color: white;
   margin: auto;
   transform: rotate(45deg);
-  top: -95px;
+  top: -16%;
 }
 .about-me-image img {
   border-radius: 50%;
@@ -231,14 +236,21 @@ body {
   margin: auto;
   height: 50vh;
   overflow: scroll;
-  color: rgb(206, 203, 203);
+  color: rgb(233, 233, 233);
   font-weight: 200;
   overflow-x: unset;
   padding: 20px;
 }
 .about-me::-webkit-scrollbar {
-  display: none;
-
+  width:5px;
+}
+.about-me::-webkit-scrollbar-track {
+  -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius:5px;
+}
+.about-me::-webkit-scrollbar-thumb {
+  border-radius:9px;
+  -webkit-box-shadow: inset 0 0 6px rgb(236, 236, 236); 
 }
 
 
@@ -321,8 +333,7 @@ body {
   background-color: #f1f1f1;
   overflow: scroll;
   height: 45vh;
-
-  text-align: center;
+  font-family: 'Catamaran', sans-serif;  text-align: center;
 }
 .education .card::-webkit-scrollbar{
   display: none;
@@ -400,6 +411,7 @@ body {
 }
 
 .experiences {
+  font-family: 'Catamaran', sans-serif;  text-align: center;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -409,6 +421,7 @@ body {
   flex-wrap: wrap;
 }
 .experience {
+  text-align: left;
   z-index: 1;
   margin: 10vw;
   display: flex;
@@ -421,13 +434,14 @@ body {
 }
 
 .experience img {
-  width: 50%;
+  margin: 10px;
+  width: 40%;
   object-fit: contain;
 }
 .experience_details {
-  padding: 20px;
+  padding: 0px 20px;
   font-size: larger;
-  height: 70%;
+  height: 80%;
   overflow: scroll;
   margin-top: 40px;
 }
@@ -441,14 +455,14 @@ body {
 }
 .experience_info {
   padding: 15px;
-  font-size: 15px;
+  font-size: 90%;
   margin-top: 40px;
+  cursor: all-scroll;
 }
 
 .internships-container svg {
   z-index: 0;
 }
-
 .projects-container {
   padding-top: 10vw;
   width: 100%;
@@ -532,8 +546,8 @@ body {
 .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  cursor: grabbing;
+  object-fit: contain !important;
+  cursor: grabbing; 
 }
 .project-description {
   color: black;
@@ -704,7 +718,7 @@ background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
 }
 
 footer {
-  width: 100vw;
+  width: 100%;
   bottom: 0px;
 }
 footer div {
@@ -864,10 +878,10 @@ footer #wave3 {
     height: fit-content;
     background-color: #454343;
     display: grid;
-    grid-template-columns: 95%;
+    grid-template-columns: 100%;
   }
   .about-details {
-    width: 80%;
+    width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -899,7 +913,7 @@ footer #wave3 {
     grid-column: 1/3;
     width: 100%;
     position: absolute;
-    bottom: -5px;
+    bottom: 0px;
     z-index: 2;
   }
 
